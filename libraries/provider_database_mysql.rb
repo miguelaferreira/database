@@ -112,6 +112,7 @@ class Chef
         end
 
         def close_test_client
+          require 'mysql2'
           @test_client.close if @test_client
         rescue ::Mysql2::Error
           @test_client = nil
@@ -130,6 +131,7 @@ class Chef
         end
 
         def close_repair_client
+          require 'mysql2'
           @repair_client.close if @repair_client
         rescue ::Mysql2::Error
           @repair_client = nil
@@ -150,6 +152,7 @@ class Chef
         end
 
         def close_query_client
+          require 'mysql2'
           @query_client.close
         rescue ::Mysql2::Error
           @query_client = nil
